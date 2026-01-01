@@ -1,0 +1,1260 @@
+/* CSS变量 - 粉色主题 */
+:root {
+    --bg-primary: #FFF9FB;
+    --color-primary: #FFB6C1;
+    --color-text: #5D4A46;
+    --color-dark: #333;
+    --color-moon: #FFD700;
+    --color-bunny: #FFFFFF;
+    --color-bunny-pink: #FFC0CB;
+    --font-title: 'Comic Sans MS', 'Arial Rounded MT Bold', 'Helvetica Rounded', cursive;
+    --font-body: 'Comic Sans MS', 'Arial Rounded MT Bold', 'Helvetica Rounded', sans-serif;
+    --transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 弹性缓动函数 */
+}
+
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 音乐播放器样式 */
+.music-player {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.music-btn {
+    width: 70px;
+    height: 70px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.music-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* 黄色月球 */
+.music-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-moon);
+    box-shadow: 
+        0 0 0 3px var(--color-moon),
+        0 4px 15px rgba(255, 215, 0, 0.5),
+        inset -10px -5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* 小兔子身体 */
+.music-btn::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    width: 25px;
+    height: 20px;
+    background-color: var(--color-bunny);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: 
+        inset -5px -3px 5px rgba(0, 0, 0, 0.1),
+        0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* 小兔子头部 */
+.music-btn span.bunny-head {
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    width: 20px;
+    height: 18px;
+    background-color: var(--color-bunny);
+    border-radius: 50%;
+    box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+/* 小兔子耳朵 */
+.music-btn span.bunny-ear-1,
+.music-btn span.bunny-ear-2 {
+    position: absolute;
+    background-color: var(--color-bunny);
+    z-index: 2;
+    box-shadow: inset -3px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.music-btn span.bunny-ear-1 {
+    top: 5px;
+    left: 50px;
+    width: 8px;
+    height: 15px;
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+    transform: rotate(15deg);
+}
+
+.music-btn span.bunny-ear-2 {
+    top: 8px;
+    left: 42px;
+    width: 8px;
+    height: 12px;
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+    transform: rotate(-10deg);
+}
+
+/* 小兔子眼睛 */
+.music-btn span.bunny-eye-1,
+.music-btn span.bunny-eye-2 {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: var(--color-dark);
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.music-btn span.bunny-eye-1 {
+    top: 22px;
+    left: 50px;
+}
+
+.music-btn span.bunny-eye-2 {
+    top: 22px;
+    left: 55px;
+}
+
+/* 小兔子腮红 */
+.music-btn span.bunny-cheek-1,
+.music-btn span.bunny-cheek-2 {
+    position: absolute;
+    width: 5px;
+    height: 3px;
+    background-color: var(--color-bunny-pink);
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.music-btn span.bunny-cheek-1 {
+    top: 24px;
+    left: 47px;
+}
+
+.music-btn span.bunny-cheek-2 {
+    top: 24px;
+    left: 58px;
+}
+
+/* 小兔子尾巴 */
+.music-btn span.bunny-tail {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-bunny);
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* 音乐播放/暂停符号 */
+.music-btn span.music-symbol {
+    position: absolute;
+    top: 30px;
+    left: 28px;
+    width: 12px;
+    height: 12px;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+/* 添加音乐提示样式 */
+.music-tip {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--color-text);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+}
+
+/* 播放符号 - 三角形 */
+.music-btn.playing span.music-symbol {
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 10px;
+    border-color: transparent transparent transparent var(--color-dark);
+    top: 29px;
+    left: 30px;
+}
+
+/* 暂停符号 - 两个竖条 */
+.music-btn:not(.playing) span.music-symbol {
+    background-color: transparent;
+    display: flex;
+    gap: 3px;
+}
+
+.music-btn:not(.playing) span.music-symbol::before,
+.music-btn:not(.playing) span.music-symbol::after {
+    content: '';
+    width: 4px;
+    height: 12px;
+    background-color: var(--color-dark);
+    border-radius: 2px;
+}
+
+/* 主容器 */
+main {
+    scroll-behavior: smooth;
+}
+
+/* 全屏页面 */
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: var(--transition);
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 标题样式 */
+.main-title {
+    font-family: var(--font-title);
+    font-size: 4rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.subtitle {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.page-title {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.page-content {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    line-height: 1.8;
+}
+
+.blessing {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    text-align: center;
+    line-height: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 图片样式 */
+.image {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+    background-color: #fff;
+}
+
+.image:hover img {
+    transform: scale(1.05);
+}
+
+/* 大图样式 - 占满页面大部分区域 */
+.large-image {
+    width: 95%;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+/* 图片大小类 */
+.image-large {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.image-medium {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.image-small {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+/* 圆形图片布局 */
+.image-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 8px 25px rgba(255, 182, 193, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+
+
+/* 第1页 - 首页布局 */
+.section-1 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.section-1 .content {
+    margin-bottom: 50px;
+    animation: fadeInDown 1s ease;
+}
+
+.section-1 .image {
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+/* 第2页 - 多图叙事页 */
+.section-2 .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.section-2 .text-side {
+    flex: 1;
+    animation: slideInLeft 1s ease;
+}
+
+.section-2 .images-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    animation: slideInRight 1s ease 0.5s both;
+}
+
+/* 第3页 - 大图主导页 */
+.section-3 .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-3 .large-image {
+    animation: zoomIn 1s ease;
+}
+
+.section-3 .text-overlay {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 249, 251, 0.9);
+    padding: 30px 50px;
+    border-radius: 20px;
+    text-align: center;
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+.section-3 .quote {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--color-text);
+}
+
+/* 第4页 - 多图叙事页 */
+.section-4 .container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 50px;
+}
+
+.section-4 .text-side {
+    flex: 1;
+    animation: slideInRight 1s ease;
+}
+
+.section-4 .images-collage {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    animation: slideInLeft 1s ease 0.5s both;
+}
+
+.section-4 .images-collage .image:nth-child(3) {
+    grid-column: span 2;
+}
+
+/* 第5页 - 大图主导页 */
+.section-5 .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.section-5 .text-side {
+    flex: 1;
+    animation: slideInLeft 1s ease;
+}
+
+.section-5 .large-image {
+    flex: 1;
+    animation: slideInRight 1s ease 0.5s both;
+}
+
+/* 第6页 - 多图叙事页 */
+.section-6 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section-6 .images-staggered {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+    animation: zoomIn 1s ease;
+    width: 100%;
+}
+
+.section-6 .text-side {
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+/* 图片相册布局 */
+.images-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    height: 80vh;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: rotateScaleFadeIn 1s ease-out forwards;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+/* 从左到右从上到下鱼贯淡入 - 第一行 */
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* 从左到右从上到下鱼贯淡入 - 第二行 */
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+.gallery-item:nth-child(7) { animation-delay: 0.7s; }
+.gallery-item:nth-child(8) { animation-delay: 0.8s; }
+.gallery-item:nth-child(9) { animation-delay: 0.9s; }
+.gallery-item:nth-child(10) { animation-delay: 1s; }
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* 动画效果 */
+@keyframes gallerySlideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes galleryItemFadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 第1页 - 首页布局 */
+.section-1 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.section-1 .content {
+    padding: 20px;
+}
+
+/* 第2页 - 大图展示页 */
+.section-2 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.section-2 .large-image {
+    width: 95%;
+    max-height: 90vh;
+}
+
+/* 第3页 - 多图叙事页（4张图片组合） - 图片在左文案在右 */
+.section-3 .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    min-height: 100vh;
+    padding: 40px 30px;
+}
+
+.section-3 .text-side {
+    flex: 1;
+    text-align: left;
+    padding: 40px 30px;
+    order: 2;
+    animation: floatUp 1.2s ease;
+}
+
+.section-3 .images-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    height: 80vh;
+    order: 1;
+}
+
+.section-3 .images-grid .image {
+    height: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 图片1 - 左上弹跳进入 */
+.section-3 .images-grid .image:nth-child(1) {
+    animation: bounceInLeft 1.2s ease 0.1s both;
+}
+
+/* 图片2 - 右上弹跳进入 */
+.section-3 .images-grid .image:nth-child(2) {
+    animation: bounceInRight 1.2s ease 0.2s both;
+}
+
+/* 图片3 - 左下弹跳进入 */
+.section-3 .images-grid .image:nth-child(3) {
+    animation: bounceInLeft 1.2s ease 0.3s both;
+}
+
+/* 图片4 - 右下弹跳进入 */
+.section-3 .images-grid .image:nth-child(4) {
+    animation: bounceInRight 1.2s ease 0.4s both;
+}
+
+/* 第4页 - 大图主导页 - 图片在右文案在左 */
+.section-4 .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    min-height: 100vh;
+    padding: 40px 30px;
+}
+
+.section-4 .text-side {
+    flex: 1;
+    text-align: right;
+    padding: 40px 30px;
+    order: 1;
+    animation: floatUp 1.2s ease;
+}
+
+.section-4 .large-image {
+    flex: 1;
+    width: 100%;
+    max-height: 80vh;
+    order: 2;
+    animation: popIn 1.2s ease 0.3s both;
+}
+
+/* 第6页 - 大图主导页（从多图页移出的图片2 - 文案在上） */
+.section-6 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    gap: 30px;
+}
+
+.section-6 .text-side {
+    order: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.section-6 .large-image {
+    width: 95%;
+    max-height: 80vh;
+    order: 2;
+}
+
+/* 第10页 - 祝福页 */
+.section-10 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    min-height: 100vh;
+}
+
+.section-10 .page-title {
+    margin-bottom: 40px;
+}
+
+/* 第5页 - 多图叙事页（文案在下） */
+.section-5 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    min-height: 100vh;
+}
+
+.section-5 .images-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    height: 80vh;
+    order: 1;
+}
+
+.section-5 .text-side {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    order: 2;
+}
+
+.section-5 .images-grid .image {
+    height: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 第6页 - 大图主导页 - 图片在左文案在右 */
+.section-6 .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    min-height: 100vh;
+    padding: 40px 30px;
+}
+
+.section-6 .text-side {
+    flex: 1;
+    text-align: left;
+    padding: 40px 30px;
+    order: 2;
+    max-width: 600px;
+    animation: floatUp 1.2s ease;
+}
+
+.section-6 .large-image {
+    flex: 1;
+    width: 100%;
+    max-height: 75vh;
+    max-width: 900px;
+    order: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    animation: popIn 1.2s ease 0.3s both;
+}
+
+.section-6 .large-image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    max-height: 75vh;
+    background-color: #fff;
+}
+
+/* 第7页 - 大图叙事页 - 图片在右文案在左 */
+.section-7 .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    min-height: 100vh;
+    padding: 50px 30px;
+}
+
+.section-7 .text-side {
+    flex: 1;
+    text-align: right;
+    padding: 40px 30px;
+    order: 1;
+    width: 100%;
+    max-width: 800px;
+    animation: floatUp 1.2s ease;
+}
+
+.section-7 .large-image {
+    flex: 1;
+    width: 95%;
+    max-height: 75vh;
+    max-width: 900px;
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    animation: popIn 1.2s ease 0.3s both;
+}
+
+.section-7 .large-image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    max-height: 75vh;
+    background-color: #fff;
+}
+
+/* 第8页 - 大图叙事页 - 图片在左文案在右 */
+.section-8 .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    min-height: 100vh;
+    padding: 50px 30px;
+}
+
+.section-8 .text-side {
+    flex: 1;
+    text-align: left;
+    padding: 40px 30px;
+    order: 2;
+    width: 100%;
+    max-width: 800px;
+    animation: floatUp 1.2s ease;
+}
+
+.section-8 .large-image {
+    flex: 1;
+    width: 100%;
+    max-height: 70vh;
+    max-width: 900px;
+    order: 1;
+    animation: popIn 1.2s ease 0.3s both;
+}
+
+/* 第9页 - 图片相册页 */
+.section-9 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 50px 30px;
+    gap: 40px;
+}
+
+.section-9 .text-side {
+    padding: 30px;
+    text-align: center;
+}
+
+.section-9 .images-gallery {
+    width: 100%;
+    max-height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* 第10页 - 祝福页 */
+.section-10 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    min-height: 100vh;
+    padding: 50px 30px;
+}
+
+.section-10 .page-title {
+    margin-bottom: 40px;
+}
+
+.section-10 .content {
+    max-width: 800px;
+    padding: 30px;
+}
+
+/* 通用文本样式 */
+.text-side {
+    max-width: 700px;
+    padding: 30px 40px;
+    line-height: 1.8;
+}
+
+.page-title {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
+}
+
+.page-content {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--color-text);
+    line-height: 1.8;
+}
+
+.quote {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blessing {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    text-align: center;
+    line-height: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 超级弹跳进入动画 - 从左 */
+@keyframes bounceInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-500px) scale(0.1) rotate(-40deg);
+    }
+    40% {
+        opacity: 1;
+        transform: translateX(50px) scale(1.3) rotate(20deg);
+    }
+    60% {
+        transform: translateX(-20px) scale(0.9) rotate(-10deg);
+    }
+    80% {
+        transform: translateX(10px) scale(1.05) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1) rotate(0);
+    }
+}
+
+/* 超级弹跳进入动画 - 从右 */
+@keyframes bounceInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(500px) scale(0.1) rotate(40deg);
+    }
+    40% {
+        opacity: 1;
+        transform: translateX(-50px) scale(1.3) rotate(-20deg);
+    }
+    60% {
+        transform: translateX(20px) scale(0.9) rotate(10deg);
+    }
+    80% {
+        transform: translateX(-10px) scale(1.05) rotate(-5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1) rotate(0);
+    }
+}
+
+/* 爆炸弹出进入动画 - 用于大图 */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-360deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.5) rotate(180deg);
+    }
+    70% {
+        opacity: 1;
+        transform: scale(0.8) rotate(-90deg);
+    }
+    90% {
+        transform: scale(1.1) rotate(45deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* 弹跳浮动上升动画 - 用于文案 */
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(300px) scale(0.5);
+    }
+    30% {
+        opacity: 0.3;
+        transform: translateY(200px) scale(0.7);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-30px) scale(1.2);
+    }
+    80% {
+        transform: translateY(15px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 强烈旋转缩放淡入动画 - 用于相册 */
+@keyframes rotateScaleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(300px) scale(0) rotate(-360deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(150px) scale(1.3) rotate(180deg);
+    }
+    80% {
+        opacity: 0.9;
+        transform: translateY(30px) scale(0.9) rotate(-45deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0);
+    }
+}
+
+/* 心跳动画 - 用于强调元素 */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.1);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    /* 基础字体调整 */
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-content {
+        font-size: 1rem;
+    }
+    
+    .quote {
+        font-size: 1.1rem;
+    }
+    
+    .blessing {
+        font-size: 1.2rem;
+    }
+    
+    /* 页面间距调整 */
+    .section {
+        padding: 30px 20px;
+        min-height: auto;
+        padding: 60px 20px;
+    }
+    
+    /* 所有容器垂直堆叠 */
+    .container {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+    
+    /* 图片容器调整 */
+    .large-image {
+        width: 100% !important;
+        max-height: 60vh !important;
+    }
+    
+    .image-large {
+        width: 100% !important;
+        max-height: 60vh !important;
+    }
+    
+    /* 图片样式调整 */
+    .image img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+    
+    /* 文字区域调整 */
+    .text-side {
+        padding: 20px !important;
+        width: 100% !important;
+    }
+    
+    /* 多图网格调整 */
+    .images-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        height: auto !important;
+    }
+    
+    .images-grid .image {
+        height: auto !important;
+        min-height: auto !important;
+    }
+    
+    /* 图片相册调整 */
+    .images-gallery {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: repeat(5, 1fr) !important;
+        gap: 10px !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+    
+    .gallery-item {
+        height: 150px !important;
+    }
+    
+    /* 文字覆盖层调整 */
+    .section-3 .text-overlay {
+        bottom: 5% !important;
+        padding: 20px 25px !important;
+        width: 90% !important;
+    }
+    
+    /* 音乐播放器调整 */
+    .music-player {
+        top: 10px !important;
+        right: 10px !important;
+    }
+    
+    /* 调整移动端音乐提示 */
+    .music-tip {
+        top: 70px !important;
+        right: 10px !important;
+        font-size: 11px !important;
+    }
+    
+    .music-btn {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .music-btn::before {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    /* 确保所有section都有正确的移动端布局 */
+    .section-1 .container,
+    .section-2 .container,
+    .section-3 .container,
+    .section-4 .container,
+    .section-5 .container,
+    .section-6 .container,
+    .section-7 .container,
+    .section-8 .container,
+    .section-9 .container,
+    .section-10 .container {
+        flex-direction: column !important;
+        gap: 30px !important;
+        padding: 20px !important;
+    }
+    
+    /* 调整特定section的间距 */
+    .section-7 .container {
+        gap: 40px !important;
+    }
+    
+    .section-8 .container {
+        gap: 40px !important;
+    }
+    
+    /* 确保图片完整显示 */
+    .section-7 .large-image img,
+    .section-6 .large-image img {
+        object-fit: contain !important;
+        max-height: 60vh !important;
+    }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025·可爱定格 - 年度回忆</title>
+    
+    <!-- 字体引入 -->
+    <style>
+        /* 移除不存在的字体引用 */
+        /* @font-face {
+            font-family: 'Smiley Sans';
+            src: url('./assets/fonts/SmileySans-Oblique.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: '仓耳渔阳体 W03';
+            src: url('./assets/fonts/CangErYuYangTi-W03.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        } */
+    </style>
+    
+    <!-- CSS链接 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 背景音乐 -->
+    <audio id="bgm" src="https://n.uguu.se/AsySxmKX.mp3" loop preload="auto" autoplay></audio>
+    
+    <!-- 音乐播放控制 -->
+    <div class="music-player">
+        <button id="music-btn" class="music-btn">
+            <span class="bunny-head"></span>
+            <span class="bunny-ear-1"></span>
+            <span class="bunny-ear-2"></span>
+            <span class="bunny-eye-1"></span>
+            <span class="bunny-eye-2"></span>
+            <span class="bunny-cheek-1"></span>
+            <span class="bunny-cheek-2"></span>
+            <span class="bunny-tail"></span>
+            <span class="music-symbol"></span>
+        </button>
+        <span class="music-tip">点击播放音乐</span>
+    </div>
+    
+    <!-- 页面内容 -->
+    <main>
+        <!-- 首页 - 年度回顾标题页 -->
+        <section class="section section-1">
+            <div class="container">
+                <div class="content">
+                    <h1 class="main-title">2025·年度回忆</h1>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第2页 - 大图展示页 -->
+        <section class="section section-2">
+            <div class="container">
+                <div class="image large-image">
+                    <img src="./assets/photos/mmexport1765248325352 - 副本.jpg" alt="回忆图片1">
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第3页 - 多图叙事页（4张图片组合） -->
+        <section class="section section-3">
+            <div class="container">
+                <div class="text-side">
+                    <h2 class="page-title">真正的旅程</h2>
+                    <p class="page-content">始于你决定成为自己地图的绘制者。</p>
+                </div>
+                <div class="images-grid">
+                    <div class="image image-large">
+                        <img src="./assets/photos/mmexport1765248358523.jpg" alt="回忆图片2">
+                    </div>
+                    <div class="image image-large">
+                        <img src="./assets/photos/mmexport1765248372086.jpg" alt="回忆图片3">
+                    </div>
+                    <div class="image image-large">
+                        <img src="./assets/photos/mmexport1765969042815.jpg" alt="回忆图片6">
+                    </div>
+                    <div class="image image-large">
+                        <img src="./assets/photos/mmexport1766320953465.jpg" alt="回忆图片7">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第4页 - 大图主导页（从多图页移出的图片1） -->
+        <section class="section section-4">
+            <div class="container">
+                <div class="image large-image">
+                    <img src="./assets/photos/Screenshot_20251231_154039.jpg" alt="回忆图片4">
+                </div>
+                <div class="text-side">
+                    <h2 class="page-title">美好瞬间</h2>
+                    <p class="page-content">每一个瞬间都值得被珍藏。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第5页 - 大图主导页 -->
+        <section class="section section-5">
+            <div class="container">
+                <div class="image large-image">
+                    <img src="./assets/photos/mmexport1765497603289 - 副本.jpg" alt="回忆图片5">
+                </div>
+                <div class="text-overlay">
+                    <p class="quote">有些人无需寻找，他们会在对的季节，轻轻叩响你的门。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第6页 - 大图主导页（从多图页移出的图片2） -->
+        <section class="section section-6">
+            <div class="container">
+                <div class="image large-image">
+                    <img src="./assets/photos/mmexport1766321019286 - 副本.jpg" alt="回忆图片8">
+                </div>
+                <div class="text-side">
+                    <h2 class="page-title">珍贵的宝藏</h2>
+                    <p class="page-content">通常埋藏在最不起眼的日子下面。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第7页 - 大图主导页 -->
+        <section class="section section-7">
+            <div class="container">
+                <div class="text-side">
+                    <h2 class="page-title">快乐时刻</h2>
+                    <p class="page-content">是专心咬下第一口苹果时，听见的那一声清脆。</p>
+                </div>
+                <div class="image large-image">
+                    <img src="./assets/photos/mmexport1766398509884 - 副本.jpg" alt="回忆图片9">
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第8页 - 大图叙事页 -->
+        <section class="section section-8">
+            <div class="container">
+                <div class="image large-image">
+                    <img src="./assets/photos/mmexport1766485819528.jpg" alt="回忆图片10">
+                </div>
+                <div class="text-side">
+                    <h2 class="page-title">时间的力量</h2>
+                    <p class="page-content">不是刻刀，而是流水。它带走了沙砾，却把最美的石头，打磨得日益温润。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第9页 - 所有图片小图罗列页 -->
+        <section class="section section-9">
+            <div class="container">
+                <div class="text-side">
+                    <h2 class="page-title">回忆相册</h2>
+                    <p class="page-content">所有美好瞬间的集合</p>
+                </div>
+                <div class="images-gallery">
+                    <div class="gallery-item">
+                        <img src="./assets/photos/mmexport1765248325352 - 副本.jpg" alt="回忆图片1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/photos/mmexport1765248358523.jpg" alt="回忆图片2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/photos/mmexport1765248372086.jpg" alt="回忆图片3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/photos/Screenshot_20251231_154039.jpg" alt="回忆图片4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/photos/mmexport1765497603289 - 副本.jpg" alt="回忆图片5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/photos/mmexport1765969042815.jpg" alt="回忆图片6">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/photos/mmexport1766320953465.jpg" alt="回忆图片7">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/photos/mmexport1766321019286 - 副本.jpg" alt="回忆图片8">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/photos/mmexport1766398509884 - 副本.jpg" alt="回忆图片9">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/photos/mmexport1766485819528.jpg" alt="回忆图片10">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第10页 - 祝福页 -->
+        <section class="section section-10">
+            <div class="container">
+                <div class="content">
+                    <h2 class="page-title">写给 2026 年的你</h2>
+                    <p class="blessing">愿新年的风，依旧偏爱你的方向。愿你的路上，常有花香，偶有星光，永远有奔赴热爱的勇气。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- JS链接 -->
+    <script src="script.js"></script>
+</body>
+</html>
